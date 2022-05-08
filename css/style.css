@@ -1,0 +1,75 @@
+/* Color Palette: 
+Yellow: #FFBA49
+Light Green: #20A39E
+Red Salsa: #EF5B5B
+Dark Purple: #23001E
+Quick Silver: #A4A9AD
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-color: whitesmoke;
+}
+
+/* Have the header fit the entire screen*/
+div.theHeader {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+img.theHeader {
+    margin: 1%;
+    padding: 0;
+    width: 500px;
+    height: 300px;
+    filter:drop-shadow(5px 5px 5px #23001E);
+    -webkit-filter: drop-shadow(5px 5px 5px #23001E);
+    -moz-filter: drop-shadow(5px 5px 5px #23001E);
+
+}
+
+/* .headerH1 {
+    font-size: 4em;
+    margin: 1%;
+    padding: 0;
+    color: #23001E;
+} */
+
+/* Style the Header element*/
+.theHeader {
+    display: flex;
+    font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFBA49;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #A4A9AD;
+    padding: 1%;
+    color: #23001E;
+}
+
+li.navigation{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+li.navigation a:hover {
+    color: whitesmoke;
+}
+
+.navigation a {
+    text-decoration: none;
+    color:#23001E;
+}
