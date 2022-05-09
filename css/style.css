@@ -11,22 +11,30 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background-color: #ffba49;
+  background-color: #EF5B5B;
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
 }
 
 /* Have the header fit the entire screen*/
 div.theHeader {
   width: 100vw;
+  min-height: 35%;
   margin: 0 auto;
   padding: 0;
+  display: flex;
+  background: url(/img/stock3.jpg);
+  --webkit-background-size: cover;
+  --moz-background-size: cover;
+  --o-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 img.theHeader {
-  margin: 1%;
-  padding: 0;
-  width: 500px;
-  height: 300px;
+  margin: 5% 1% 1% 1%;
+  padding: 1% 0% 0% 1%;
+  width: 10%;
+  justify-content: flex-start;
   filter: drop-shadow(5px 5px 5px #23001e);
   -webkit-filter: drop-shadow(5px 5px 5px #23001e);
   -moz-filter: drop-shadow(5px 5px 5px #23001e);
@@ -43,10 +51,12 @@ img.theHeader {
 .theHeader {
   display: flex;
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  font-size: 1.15em;
+  color: whitesmoke;
   flex-direction: column;
-  align-items: center;
-  background-color: #ef5b5b;
+  align-items: flex-start;
   text-align: center;
+  justify-content: flex-start;
 }
 
 nav {
@@ -91,7 +101,7 @@ li.navigation a:hover {
 #textBlock {
     display: flex;
     width: 50%;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: left;
     align-content: flex-start;
     align-items: center;
@@ -101,4 +111,44 @@ li.navigation a:hover {
     background-color: #a4a9ad;
     border-radius: 5%;
     padding: 10px;
+}
+
+#textBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.textBlock1 select,option {
+    writing-mode: horizontal-tb;
+  block-size: 15%;
+  width: 25%
+}
+
+.textBlock1 option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.alignInRow {
+    display:flex;
+    flex-direction: row;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+.textBlock2 select,option {
+    writing-mode: horizontal-tb;
+    block-size: 150%;
+    width: 70%;
+}
+
+.textBlock2 option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#textBlock {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
