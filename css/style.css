@@ -105,6 +105,7 @@ li.navigation a:hover {
     justify-content: left;
     align-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
 
 #textBlock h3{
@@ -113,42 +114,56 @@ li.navigation a:hover {
     padding: 10px;
 }
 
-#textBlock {
+/* .textBlock1 {
     display: flex;
     flex-direction: column;
-}
+    width: 30%;
+} */
 
-.textBlock1 select,option {
+/* .textBlock1 select,option {
     writing-mode: horizontal-tb;
   block-size: 15%;
-  width: 25%
-}
+  width: 15%
+} */
 
-.textBlock1 option {
+/* .textBlock1 option {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
+} */
 
-.alignInRow {
+/* .alignInRow {
     display:flex;
     flex-direction: row;
-    margin-top: 3%;
-    margin-bottom: 5%;
-}
-.textBlock2 select,option {
+    padding: 10% 25% 25% 25%;
+} */
+
+/* .textBlock2 {
+margin:auto;
+} */
+/* .textBlock2 select,option {
     writing-mode: horizontal-tb;
     block-size: 150%;
     width: 70%;
-}
+} */
 
-.textBlock2 option {
+/* .textBlock2 option {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
+} */
 
-#textBlock {
+/* #textBlock {
     margin-top: 5%;
     margin-bottom: 5%;
+} */
+
+div.forStyle {
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10%;
 }
