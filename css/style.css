@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  background-color: #EF5B5B;
+  background-color: #ef5b5b;
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
 }
 
@@ -39,13 +39,6 @@ img.theHeader {
   -webkit-filter: drop-shadow(5px 5px 5px #23001e);
   -moz-filter: drop-shadow(5px 5px 5px #23001e);
 }
-
-/* .headerH1 {
-    font-size: 4em;
-    margin: 1%;
-    padding: 0;
-    color: #23001E;
-} */
 
 /* Style the Header element*/
 .theHeader {
@@ -84,86 +77,126 @@ li.navigation a:hover {
 .navigation a {
   text-decoration: none;
   color: #23001e;
+  font-weight: bold;
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
   font-size: 0.9em;
 }
 
 .mainBody {
-    width: 80%;
-    margin-left: 10%;
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    background-color: whitesmoke;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: whitesmoke;
 }
 
 #textBlock {
-    display: flex;
-    width: 50%;
-    flex-direction: row;
-    justify-content: left;
-    align-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: left;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10%;
 }
 
-#textBlock h3{
-    background-color: #a4a9ad;
-    border-radius: 5%;
-    padding: 10px;
+#textBlock h3 {
+  background-color: #a4a9ad;
+  border-radius: 25px;
+  padding: 10px;
 }
 
-/* .textBlock1 {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-} */
+.textBlock1 select,
+option {
+  block-size: 25%;
+  width: 50%;
+}
 
-/* .textBlock1 select,option {
-    writing-mode: horizontal-tb;
-  block-size: 15%;
-  width: 15%
-} */
+div.textBlock2 {
+  width: 80%;
+  margin-left: 10%;
+}
 
-/* .textBlock1 option {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-} */
+label {
+  margin-top: 5%;
+  margin-bottom: 8%;
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
 
-/* .alignInRow {
-    display:flex;
-    flex-direction: row;
-    padding: 10% 25% 25% 25%;
-} */
+button {
+  background-color: #20a39e;
+  border-radius: 25px;
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+}
 
-/* .textBlock2 {
-margin:auto;
-} */
-/* .textBlock2 select,option {
-    writing-mode: horizontal-tb;
-    block-size: 150%;
-    width: 70%;
-} */
+button:hover {
+    background-color:rgba(32, 163, 158, 0.25);
+}
 
-/* .textBlock2 option {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-} */
+select {
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-align: center;
+}
 
-/* #textBlock {
-    margin-top: 5%;
-    margin-bottom: 5%;
-} */
+.textBlock2 select,
+option {
+  writing-mode: horizontal-tb;
+  block-size: 150%;
+  width: 100%;
+  padding: 1%;
+}
+
+.textBlock2 select {
+  margin: 2%;
+  width: 100%;
+  padding-top: 0.5%;
+}
+
+.textBlock2 option {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 80%;
+  padding: 0%;
+}
 
 div.forStyle {
-    border: solid 1px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 10%;
+  width: 70%;
+  margin-left: 6%;
+  padding: 10%;
+  background-color: rgba(32, 163, 158, 0.25);
+  border-radius: 25px;
+  --webkit-box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  --moz-box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.what {
+  text-align: center;
+  width: 76%;
+  margin-left: 10%;
+}
+
+.when {
+  text-align: center;
+  width: 76%;
+  margin-left: 8%;
+}
+
+.where {
+  text-align: center;
+  width: 76%;
+  margin-left: 12%;
 }
