@@ -89,7 +89,7 @@ li.navigation a:hover {
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: space-around;
-  background-color: whitesmoke;
+  background-color: #d4cfca;
 }
 
 #textBlock {
