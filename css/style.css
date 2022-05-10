@@ -97,8 +97,9 @@ li.navigation a:hover {
   width: 50%;
   flex-direction: row;
   justify-content: left;
-  align-content: flex-start;
+  align-content: center;
   align-items: center;
+  align-self: center;
   flex-direction: column;
   margin-bottom: 10%;
 }
