@@ -11,7 +11,7 @@ const settings = {
     "X-RapidAPI-Key": "3282c2cba4msh00975632392a7f6p11275fjsne77488776eae",
   },
 };
-const basicItems = ["ID/Passport", "Credit/Debit card(s)", "glasses", "watch"];
+const basicItems = ["ID/Passport", "Credit/Debit card(s)", "Glasses", "Watch"];
 const clothingItems = [
   "Shirt/Top(s)",
   "Bottom(long/short)",
@@ -74,24 +74,78 @@ let $endDay = $(".end_month");
 let $startDate = [];
 let $endDate = [];
 let $numOfHours = "";
+let $day = [{
+    index: 'Sunny',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+},{
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+}, {
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+}, {
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+}, {
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+}, {
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+} , {
+    index: '',
+    rain: false,
+    sunny: true,
+    tHigh: '',
+    tLow: '',
+}];
+
+
 
 //Element References----------------------------------------------
+// $response = '';
 
 //Event Listeners----------------------------------------------
 
 //Functions----------------------------------------------
-
 
 //Hide the last paragraph at load of page
 $(document).ready(function () {
   $("#afterSubmit").hide();
 });
 
-
 //Function to display the weather forcast on the page
 
-function displayWeather(){
+function displayWeather() {
+   for(let i = 0; i <= ($numOfHours/24); i++){
+    $(".theWeatherP").append(
+        `<li> Day ${i+1} Weather will be: ${$day[i].index}! <br> High Temp: ${$day[i].tHigh} <br> Low Temp: ${$day[i].tLow} </li>`
+        )};
+};
 
+
+//Determine what the weather will be and update variable to allow for correct input on page
+
+function updateWeather(){
+    
 };
 
 
@@ -105,8 +159,7 @@ function makeCheckList() {
   $(".thePlan").after(
     `<p><input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> </p>`
   );
-};
-
+}
 
 //Write function that selects the correct API link
 
@@ -125,8 +178,6 @@ function runApi() {
     console.log("location does not match listed options.");
   }
 }
-
-
 
 //On-Click function--- run the following-----
 
@@ -147,10 +198,23 @@ $("button").on("click", function () {
 
   //call the Ajax URL
 
+
   $.ajax(settings).done(function (response) {
     console.log("Weather forcast is ready");
     console.log(response);
-  });
-  displayWeather();
+  
+  //Update Weather Info attained from API
+  for(let i = 0; i <= ($numOfHours/24); i++){
+    $day[i].index = response.daily.data[i].icon;
+    $day[i].tHigh = response.daily.data[i].temperatureHigh;
+    $day[i].tLow = response.daily.data[i].temperatureLow;
+    console.log($day);
+}
+displayWeather();
+});
+
+  //Call other functions to run in correct order
+  updateWeather();
+ 
   makeCheckList();
 });
