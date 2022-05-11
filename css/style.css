@@ -201,3 +201,31 @@ div.forStyle {
   width: 76%;
   margin-left: 12%;
 }
+
+#afterSubmit {
+  display: flex;
+  justify-content: center;
+  width: 100 wv;
+  margin: 0% 15%;
+  padding: 10%;
+  background-color: rgba(32, 163, 158, 0.25);
+  border-radius: 25px;
+  --webkit-box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  --moz-box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 1px 5px 5px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.addedLater {
+  list-style: circle;
+  text-align: left;
+  margin-left: -16%;
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  padding-bottom: 4%;
+}

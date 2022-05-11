@@ -137,7 +137,7 @@ $(document).ready(function () {
 function displayWeather() {
    for(let i = 0; i <= ($numOfHours/24); i++){
     $(".theWeatherP").append(
-        `<li> Day ${i+1} Weather will be: ${$day[i].index}! <br> High Temp: ${$day[i].tHigh} <br> Low Temp: ${$day[i].tLow} </li>`
+        `<li class="addedLater"> Day ${i+1} Weather: ${$day[i].index}! <br> High Temp: ${$day[i].tHigh} <br> Low Temp: ${$day[i].tLow} </li>`
         )};
 };
 
@@ -156,10 +156,20 @@ function makeCheckList() {
   $("#afterSubmit").show();
 
   //Function to display new HTML Div after submit
-  $(".thePlan").after(
-    `<p><input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> <input type="checkbox" id="item1"><label for="item1"> Suitcase </label><br> </p>`
-  );
-}
+    for (let a = 0; a < basicItems.length; a++){
+      $(".thePlan").append(`<li class="basicI"><input type="checkbox" id="item1"><label for="item1"> ${basicItems[a]} </label></li><br>`)
+    };
+    for (let b = 0; b < personalItems.length; b++){
+      $(".thePlan").append(`<li class="personalI"><input type="checkbox" id="item1"><label for="item1"> ${personalItems[b]} </label></li><br>`)
+    };
+    for (let c = 0; c < techItems.length; c++){
+      $(".thePlan").append(`<li class="techI"><input type="checkbox" id="item1"><label for="item1"> ${techItems[c]} </label></li><br>`)
+    };
+    for (let d = 0; d < clothingItems.length; d++){
+      $(".thePlan").append(`<li class="clothingI"><input type="checkbox" id="item1"><label for="item1"> ${clothingItems[d]} </label></li><br>`)
+    };
+};
+
 
 //Write function that selects the correct API link
 
