@@ -153,20 +153,23 @@ function displayWeather() {
 //Determine what the weather will be and update variable to allow for correct input on page
 
 function updateWeather() {
-  for (let a = 0; a <= $numOfHours / 24; a++) {
+  for (let a = 0; a <= ($numOfHours / 24); a++) {
     if ($day[a].tHigh >= 80) {
+      console.log($day[a].tHigh);
       for (let b = 0; b < hotItems.length; b++) {
         $(".thePlan").append(
-          `<li class="hotI"><input type="checkbox" id="item1"><label for="item1"> ${hotItems[b]} </label></li><br>`
+          `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${hotItems[b]} </label></li><br>`
         );
       }
-    } else if ($day[a].tLow <= 40) {
+    } else if ($day[a].tLow <= '40') {
       for (let c = 0; c < coldItems.length; c++) {
-        `<li class="coldI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`;
+        $(".thePlan").append(
+        `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`)
       }
-    } else if ($day[a].rain === true){
+    } else if ($day[a].rain === true) {
       for (let d = 0; d < rainyItems.length; d++) {
-        `<li class="rainyI"><input type="checkbox" id="item1"><label for="item1"> ${rainyItems[d]} </label></li><br>`;
+        $(".thePlan").append(
+        `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${rainyItems[d]} </label></li><br>`)
       }
     }
   }
@@ -178,31 +181,31 @@ function typeOfTraveler() {
   if ($activities === "adventureJunkie") {
     for (let a = 0; a < adventureItems.length; a++) {
       $(".thePlan").append(
-        `<li class="adventureI"><input type="checkbox" id="item1"><label for="item1"> ${adventureItems[a]} </label></li><br>`
+        `<li class="activitiesI"><input type="checkbox" id="item1"><label for="item1"> ${adventureItems[a]} </label></li><br>`
       );
     }
   } else if ($activities === "touristyTraveler") {
     for (let b = 0; b < tourItems.length; b++) {
       $(".thePlan").append(
-        `<li class="tourI"><input type="checkbox" id="item1"><label for="item1"> ${tourItems[b]} </label></li><br>`
+        `<li class="activitiesI"><input type="checkbox" id="item1"><label for="item1"> ${tourItems[b]} </label></li><br>`
       );
     }
   } else if ($activities === "cultureSeeker") {
     for (let c = 0; c < cultureItems.length; c++) {
       $(".thePlan").append(
-        `<li class="cultureI"><input type="checkbox" id="item1"><label for="item1"> ${cultureItems[c]} </label></li><br>`
+        `<li class="activitiesI"><input type="checkbox" id="item1"><label for="item1"> ${cultureItems[c]} </label></li><br>`
       );
     }
   } else if ($activities === "citySlicker") {
     for (let d = 0; d < cityItems.length; d++) {
       $(".thePlan").append(
-        `<li class="cityI"><input type="checkbox" id="item1"><label for="item1"> ${cityItems[d]} </label></li><br>`
+        `<li class="activitiesI"><input type="checkbox" id="item1"><label for="item1"> ${cityItems[d]} </label></li><br>`
       );
     }
   } else if ($activities === "soulSearcher") {
     for (let e = 0; e < soulItems.length; e++) {
       $(".thePlan").append(
-        `<li class="soulI"><input type="checkbox" id="item1"><label for="item1"> ${soulItems[e]} </label></li><br>`
+        `<li class="activitiesI"><input type="checkbox" id="item1"><label for="item1"> ${soulItems[e]} </label></li><br>`
       );
     }
   }
@@ -281,8 +284,14 @@ $("button").on("click", function () {
     //Update Weather Info attained from API
     for (let i = 0; i <= $numOfHours / 24; i++) {
       $day[i].index = response.daily.data[i].icon;
-      $day[i].tHigh = response.daily.data[i].temperatureHigh;
-      $day[i].tLow = response.daily.data[i].temperatureLow;
+      $day[i].tHigh = parseInt(response.daily.data[i].temperatureHigh);
+      $day[i].tLow = parseInt(response.daily.data[i].temperatureLow);
+      if (response.daily.data[i].icon === 'rainy!'){
+        $day[i].rain = true;
+      }
+      if (response.daily.data[i].icon === 'sunny!'){
+        $day[i].sunny = true;
+      }
       console.log($day);
     }
     displayWeather();

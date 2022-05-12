@@ -236,3 +236,11 @@ div.forStyle {
   text-align: left;
   margin: -1%;
 }
+
+.activitiesI {
+  color: #EF5B5B;
+}
+
+.weatherI {
+  color: rgba(32,163,158,.8) ;
+}
