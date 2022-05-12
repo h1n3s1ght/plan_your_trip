@@ -74,51 +74,57 @@ let $endDay = $(".end_month");
 let $startDate = [];
 let $endDate = [];
 let $numOfHours = "";
-let $day = [{
-    index: 'Sunny',
+let $day = [
+  {
+    index: "Sunny",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-},{
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-}, {
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-}, {
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-}, {
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-}, {
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-} , {
-    index: '',
+    tHigh: "",
+    tLow: "",
+  },
+  {
+    index: "",
     rain: false,
     sunny: true,
-    tHigh: '',
-    tLow: '',
-}];
-
-
+    tHigh: "",
+    tLow: "",
+  },
+];
 
 //Element References----------------------------------------------
 // $response = '';
@@ -135,19 +141,72 @@ $(document).ready(function () {
 //Function to display the weather forcast on the page
 
 function displayWeather() {
-   for(let i = 0; i <= ($numOfHours/24); i++){
+  for (let i = 0; i <= $numOfHours / 24; i++) {
     $(".theWeatherP").append(
-        `<li class="addedLater"> Day ${i+1} Weather: ${$day[i].index}! <br> High Temp: ${$day[i].tHigh} <br> Low Temp: ${$day[i].tLow} </li>`
-        )};
-};
-
+      `<li class="addedLater"> Day ${i + 1} Weather: ${
+        $day[i].index
+      }! <br> High Temp: ${$day[i].tHigh} <br> Low Temp: ${$day[i].tLow} </li>`
+    );
+  }
+}
 
 //Determine what the weather will be and update variable to allow for correct input on page
 
-function updateWeather(){
-    
-};
+function updateWeather() {
+  for (let a = 0; a <= $numOfHours / 24; a++) {
+    if ($day[a].tHigh >= 80) {
+      for (let b = 0; b < hotItems.length; b++) {
+        $(".thePlan").append(
+          `<li class="hotI"><input type="checkbox" id="item1"><label for="item1"> ${hotItems[b]} </label></li><br>`
+        );
+      }
+    } else if ($day[a].tLow <= 40) {
+      for (let c = 0; c < coldItems.length; c++) {
+        `<li class="coldI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`;
+      }
+    } else if ($day[a].rain === true){
+      for (let d = 0; d < rainyItems.length; d++) {
+        `<li class="rainyI"><input type="checkbox" id="item1"><label for="item1"> ${rainyItems[d]} </label></li><br>`;
+      }
+    }
+  }
+}
 
+//determine what type of traveler the user is
+
+function typeOfTraveler() {
+  if ($activities === "adventureJunkie") {
+    for (let a = 0; a < adventureItems.length; a++) {
+      $(".thePlan").append(
+        `<li class="adventureI"><input type="checkbox" id="item1"><label for="item1"> ${adventureItems[a]} </label></li><br>`
+      );
+    }
+  } else if ($activities === "touristyTraveler") {
+    for (let b = 0; b < tourItems.length; b++) {
+      $(".thePlan").append(
+        `<li class="tourI"><input type="checkbox" id="item1"><label for="item1"> ${tourItems[b]} </label></li><br>`
+      );
+    }
+  } else if ($activities === "cultureSeeker") {
+    for (let c = 0; c < cultureItems.length; c++) {
+      $(".thePlan").append(
+        `<li class="cultureI"><input type="checkbox" id="item1"><label for="item1"> ${cultureItems[c]} </label></li><br>`
+      );
+    }
+  } else if ($activities === "citySlicker") {
+    for (let d = 0; d < cityItems.length; d++) {
+      $(".thePlan").append(
+        `<li class="cityI"><input type="checkbox" id="item1"><label for="item1"> ${cityItems[d]} </label></li><br>`
+      );
+    }
+  } else if ($activities === "soulSearcher") {
+    for (let e = 0; e < soulItems.length; e++) {
+      $(".thePlan").append(
+        `<li class="soulI"><input type="checkbox" id="item1"><label for="item1"> ${soulItems[e]} </label></li><br>`
+      );
+    }
+  }
+}
 
 //Function to make the list items appear below Div "#afterSubmit"
 
@@ -156,20 +215,27 @@ function makeCheckList() {
   $("#afterSubmit").show();
 
   //Function to display new HTML Div after submit
-    for (let a = 0; a < basicItems.length; a++){
-      $(".thePlan").append(`<li class="basicI"><input type="checkbox" id="item1"><label for="item1"> ${basicItems[a]} </label></li><br>`)
-    };
-    for (let b = 0; b < personalItems.length; b++){
-      $(".thePlan").append(`<li class="personalI"><input type="checkbox" id="item1"><label for="item1"> ${personalItems[b]} </label></li><br>`)
-    };
-    for (let c = 0; c < techItems.length; c++){
-      $(".thePlan").append(`<li class="techI"><input type="checkbox" id="item1"><label for="item1"> ${techItems[c]} </label></li><br>`)
-    };
-    for (let d = 0; d < clothingItems.length; d++){
-      $(".thePlan").append(`<li class="clothingI"><input type="checkbox" id="item1"><label for="item1"> ${clothingItems[d]} </label></li><br>`)
-    };
-};
-
+  for (let a = 0; a < basicItems.length; a++) {
+    $(".thePlan").append(
+      `<li class="basicI"><input type="checkbox" id="item1"><label for="item1"> ${basicItems[a]} </label></li><br>`
+    );
+  }
+  for (let b = 0; b < personalItems.length; b++) {
+    $(".thePlan").append(
+      `<li class="personalI"><input type="checkbox" id="item1"><label for="item1"> ${personalItems[b]} </label></li><br>`
+    );
+  }
+  for (let c = 0; c < techItems.length; c++) {
+    $(".thePlan").append(
+      `<li class="techI"><input type="checkbox" id="item1"><label for="item1"> ${techItems[c]} </label></li><br>`
+    );
+  }
+  for (let d = 0; d < clothingItems.length; d++) {
+    $(".thePlan").append(
+      `<li class="clothingI"><input type="checkbox" id="item1"><label for="item1"> ${clothingItems[d]} </label></li><br>`
+    );
+  }
+}
 
 //Write function that selects the correct API link
 
@@ -208,23 +274,22 @@ $("button").on("click", function () {
 
   //call the Ajax URL
 
-
   $.ajax(settings).done(function (response) {
     console.log("Weather forcast is ready");
     console.log(response);
-  
-  //Update Weather Info attained from API
-  for(let i = 0; i <= ($numOfHours/24); i++){
-    $day[i].index = response.daily.data[i].icon;
-    $day[i].tHigh = response.daily.data[i].temperatureHigh;
-    $day[i].tLow = response.daily.data[i].temperatureLow;
-    console.log($day);
-}
-displayWeather();
-});
+
+    //Update Weather Info attained from API
+    for (let i = 0; i <= $numOfHours / 24; i++) {
+      $day[i].index = response.daily.data[i].icon;
+      $day[i].tHigh = response.daily.data[i].temperatureHigh;
+      $day[i].tLow = response.daily.data[i].temperatureLow;
+      console.log($day);
+    }
+    displayWeather();
+  });
 
   //Call other functions to run in correct order
   updateWeather();
- 
+  typeOfTraveler();
   makeCheckList();
 });
