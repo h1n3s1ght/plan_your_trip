@@ -153,24 +153,30 @@ function displayWeather() {
 //Determine what the weather will be and update variable to allow for correct input on page
 
 function updateWeather() {
-  for (let a = 0; a <= ($numOfHours / 24); a++) {
+  for (let a = 0; a <= $numOfHours / 24; a++) {
     if ($day[a].tHigh >= 80) {
-      console.log($day[a].tHigh);
       for (let b = 0; b < hotItems.length; b++) {
         $(".thePlan").append(
           `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${hotItems[b]} </label></li><br>`
         );
       }
-    } else if ($day[a].tLow <= '40') {
+      return;
+    } else if ($day[a].tLow <= 30) {``
       for (let c = 0; c < coldItems.length; c++) {
         $(".thePlan").append(
-        `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`)
+          `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`
+        );
       }
+      return;
     } else if ($day[a].rain === true) {
       for (let d = 0; d < rainyItems.length; d++) {
         $(".thePlan").append(
-        `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${rainyItems[d]} </label></li><br>`)
+          `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${rainyItems[d]} </label></li><br>`
+        );
       }
+      return;
+    } else {
+      console.log("no added item for this iteration.")
     }
   }
 }
@@ -286,19 +292,20 @@ $("button").on("click", function () {
       $day[i].index = response.daily.data[i].icon;
       $day[i].tHigh = parseInt(response.daily.data[i].temperatureHigh);
       $day[i].tLow = parseInt(response.daily.data[i].temperatureLow);
-      if (response.daily.data[i].icon === 'rainy!'){
+      if (response.daily.data[i].icon === "rainy!") {
         $day[i].rain = true;
       }
-      if (response.daily.data[i].icon === 'sunny!'){
+      if (response.daily.data[i].icon === "sunny!") {
         $day[i].sunny = true;
       }
       console.log($day);
     }
     displayWeather();
+    updateWeather();
   });
 
   //Call other functions to run in correct order
-  updateWeather();
+  // updateWeather();
   typeOfTraveler();
   makeCheckList();
 });
