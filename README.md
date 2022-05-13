@@ -1,1 +1,5 @@
 Read Me!
+
+Plan for my project would be to design a trip planning tool. The tool will ask for user input about where they would like to go, what days they plan to travel, and what kind of activities they want to do on the trip. The tool will then output a plan for the user.
+The onset of the project will be to just make sure the user is given an accurate weather forecast for that location around the time of their trip. This page will also give a “packing checklist” for this location… adjusting the packing list according to what type of activities they would like to do and the weather. The goal would be to setup a page that integrates the Dark Sky’s API. This API has a forecasting feature that would allow for weather predictions up to two months ahead. which would be perfect for this project.
+Future features I would like to add to the plan would be to integrate Eventful’s API as well. In doing so I can create an entire section of the trip planning that can list of local event based on what the user put in for activities they would like to do on their trip. This would be a feature I would add at the end after achieving the MVP standards.
