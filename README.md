@@ -1,6 +1,6 @@
 Read Me!
 #### A website that helps Plan Your Trip!
-<img src="https://h1n3s1ght.github.io/plan_your_trip/" alt="Home Page Welcome Screen"/>
+<img src="https://h1n3s1ght.github.io/plan_your_trip/index.html" alt="Home Page Welcome Screen"/>
 
 
 ## Description
@@ -29,22 +29,29 @@ The onset of the project will be to just make sure the user is given an accurate
 * Users input what type of traveler they are and which location they would like to vist. 
 * App pulls live weather information from 3rd party API
 
-## Whiteboard Images
-* All Sketches are on notepad
 
 ## Trello Planning
 * Link to Trello: https://trello.com/b/8zVsCRWh/pyt-dev-board-project-1-ga
 
 ## <a name="design"></a>Design
 * Design elements implemented using Flex-box and CSS3
+* Stored Color Palette as a comment at the top of the CSS
 
 
 ## <a name="nextsteps"></a>Project Next Steps
-* Future features I would like to add to the plan would be to integrate Eventful’s API as well. In doing so I can create an entire section of the trip planning that can list of local event based on what the user put in for activities they would like to do on their trip. This would be a feature I would add at the end after achieving the MVP standards.
+* Add 2-4 other API's
+    * <strong>Eventful:</strong> this will allow users to find out what event are available near their travel destination
+    * <strong>Amadeus:</strong> this will help user book Hotels at the destination during this period of time
+    * <strong>Google Maps GeoCoding:</strong> This will make this platform fully searchable based on what is searchable in google maps
+    * <strong>OpenTable API:</strong> This will allow users to create reservations at local food sites. 
 
+* <strong>CSS Edits like:</strong>
+    * Media Queries for smaller screens
 
-## <a name="deployment"></a>Deployed Link
-* N/A
+* <strong>JavaScript Functions for usability</strong>
+    * Print feature for the checklist and itenerary
+    * Share features of the plan to other people or to another device.
+    * Save the plan for a user to return back and see it
 
 
 ## <a name="author"></a>About The Author
