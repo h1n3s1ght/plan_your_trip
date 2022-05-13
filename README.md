@@ -1,6 +1,6 @@
 Read Me!
 #### A website that helps Plan Your Trip!
-<img src="https://h1n3s1ght.github.io/plan_your_trip/index.html" alt="Home Page Welcome Screen"/>
+<img src="https://h1n3s1ght.github.io/plan_your_trip/" alt="Home Page Welcome Screen"/>
 
 
 ## Description

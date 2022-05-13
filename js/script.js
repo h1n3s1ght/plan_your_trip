@@ -161,7 +161,8 @@ function updateWeather() {
         );
       }
       return;
-    } else if ($day[a].tLow <= 30) {``
+    } else if ($day[a].tLow <= 30) {
+      ``;
       for (let c = 0; c < coldItems.length; c++) {
         $(".thePlan").append(
           `<li class="weatherI"><input type="checkbox" id="item1"><label for="item1"> ${coldItems[c]} </label></li><br>`
@@ -176,7 +177,7 @@ function updateWeather() {
       }
       return;
     } else {
-      console.log("no added item for this iteration.")
+      console.log("no added item for this iteration.");
     }
   }
 }
@@ -309,4 +310,3 @@ $("button").on("click", function () {
   typeOfTraveler();
   makeCheckList();
 });
-
