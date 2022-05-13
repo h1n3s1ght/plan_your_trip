@@ -5,7 +5,7 @@ Read Me!
 
 ## Description
 
-<img src="./img/WireFrame_Project1.png">
+<img src="./img/WireFrame_project1.png">
 
 Plan for my project would be to design a trip planning tool. The tool will ask for user input about where they would like to go, what days they plan to travel, and what kind of activities they want to do on the trip. The tool will then output a plan for the user.
 The onset of the project will be to just make sure the user is given an accurate weather forecast for that location around the time of their trip. This page will also give a “packing checklist” for this location… adjusting the packing list according to what type of activities they would like to do and the weather. The goal would be to setup a page that integrates the Dark Sky’s API. This API has a forecasting feature that would allow for weather predictions up to two months ahead. which would be perfect for this project.
