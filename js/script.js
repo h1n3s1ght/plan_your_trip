@@ -309,3 +309,4 @@ $("button").on("click", function () {
   typeOfTraveler();
   makeCheckList();
 });
+
